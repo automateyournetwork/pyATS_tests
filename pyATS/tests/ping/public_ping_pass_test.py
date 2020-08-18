@@ -60,7 +60,7 @@ class ping_class(aetest.Testcase):
         self.ping_results = {}
         for device_name, device in testbed.devices.items():
             # Only attempt to ping on supported network operation systems
-            if device.os in ("ios", "iosxe", "iosxr", "nxos"):
+            if device.os in ("ios", "iosxe", "iosxr", "nxos", "linux"):
                 logger.info(f"{device_name} connected status: {device.connected}")
                 self.ping_results[device_name] = {}
                 for ip in ping_list:
